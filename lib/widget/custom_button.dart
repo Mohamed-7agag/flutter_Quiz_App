@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -7,8 +5,12 @@ class CustomButton extends StatelessWidget {
   final double width;
   final String text;
   final Function() onpressed;
-  const CustomButton(
-      {super.key,this.width=140, required this.text, required this.onpressed,});
+  const CustomButton({
+    super.key,
+    this.width = 140,
+    required this.text,
+    required this.onpressed,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class CustomButton extends StatelessWidget {
       ),
       child: FloatingActionButton.extended(
           backgroundColor: HexColor("#404040"),
-          icon: Icon(Icons.arrow_forward_ios),
+          icon: const Icon(Icons.arrow_forward_ios),
           onPressed: onpressed,
           label: Text(
             text,

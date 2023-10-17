@@ -1,9 +1,8 @@
-// ignore_for_file: must_be_immutable, prefer_const_constructors
+// ignore_for_file: must_be_immutable,
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_quiz/controller/quiz_controller.dart';
 import 'package:get/get.dart';
-import 'package:hexcolor/hexcolor.dart';
 
 class Progresstimer extends StatelessWidget {
   Progresstimer({super.key});
@@ -19,17 +18,15 @@ class Progresstimer extends StatelessWidget {
             children: [
               CircularProgressIndicator(
                 value: 1 - (controller.second.value / 15),
-                color: HexColor("#3894a3"),
+                color: const Color(0xff3894a3),
                 backgroundColor: Colors.grey,
                 strokeWidth: 5,
               ),
               Center(
                 child: Text(
                   "${controller.second.value}",
-                  style: Theme.of(context)
-                      .textTheme
-                      .headlineSmall!
-                      .copyWith(color:HexColor("#3894a3"),),
+                  style:
+                      const TextStyle(fontSize: 18, color: Color(0xff3894a3)),
                 ),
               )
             ],

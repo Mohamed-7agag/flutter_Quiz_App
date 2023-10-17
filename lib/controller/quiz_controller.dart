@@ -1,4 +1,4 @@
-// ignore_for_file: unused_field, prefer_final_fields, non_constant_identifier_names, no_leading_underscores_for_local_identifiers, unused_local_variable, prefer_const_constructors, unused_import
+// ignore_for_file: unused_field, prefer_final_fields, non_constant_identifier_names, no_leading_underscores_for_local_identifiers, unused_local_variable,
 
 import 'dart:async';
 
@@ -7,7 +7,6 @@ import 'package:flutter_application_quiz/model/question_model.dart';
 import 'package:flutter_application_quiz/view/quiz_screen/result_screen/resutl_screen.dart';
 import 'package:flutter_application_quiz/view/welcome_screen.dart';
 import 'package:get/get.dart';
-import 'package:hexcolor/hexcolor.dart';
 
 class QuizController extends GetxController {
   String name = "";
@@ -170,7 +169,7 @@ class QuizController extends GetxController {
       stopTimer();
     }
     if (pageController.page == questionslenght - 1) {
-      Get.off(() => QuizResult());
+      Get.off(() => const QuizResult());
     } else {
       _ispressed = false;
       resetanswer();
@@ -202,8 +201,6 @@ class QuizController extends GetxController {
     _selectedanswer = null;
     _numberOfquestion = 1;
     resetanswer();
-    Get.offAll(() => WelcomeScreen());
+    Get.offAll(() => const WelcomeScreen());
   }
-}//
-
-
+} //

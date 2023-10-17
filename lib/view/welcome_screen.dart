@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, must_be_immutable, body_might_complete_normally_nullable
+// ignore_for_file: must_be_immutable, body_might_complete_normally_nullable
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_quiz/controller/quiz_controller.dart';
@@ -25,28 +25,34 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
         decoration: BoxDecoration(
           color: HexColor("#1f2123"),
         ),
         child: ListView(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 230,
             ),
-            Text(
+            const Text(
               "Let's Start Quiz",
-              style: TextStyle(fontSize: 30, color: HexColor("#d9d9d9"),),
+              style: TextStyle(
+                fontSize: 30,
+                color: Colors.white,
+              ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
-            Text(
+            const Text(
               "Enter Your name To Start",
-              style: TextStyle(fontSize: 22, color: HexColor("#737373"),),
+              style: TextStyle(
+                fontSize: 22,
+                color: Color.fromARGB(255, 165, 165, 165),
+              ),
             ),
-            SizedBox(
-              height: 50,
+            const SizedBox(
+              height: 35,
             ),
             Form(
                 key: mykey,
@@ -62,19 +68,21 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         return "Name Required";
                       }
                     },
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
                     decoration: InputDecoration(
                       hintText: " Enter Your Name",
                       hintStyle: TextStyle(color: Colors.grey[600]),
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(50)),
                       enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: HexColor("#737373"),),
+                          borderSide: BorderSide(
+                            color: HexColor("#737373"),
+                          ),
                           borderRadius: BorderRadius.circular(50)),
                     ),
                   ),
                 )),
-            SizedBox(
+            const SizedBox(
               height: 25,
             ),
             CustomButton(
@@ -82,7 +90,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               onpressed: () {
                 if (mykey.currentState!.validate()) {
                   mykey.currentState!.save();
-                  Get.off(() => QuizScreen());
+                  Get.off(() => const QuizScreen());
                   Get.find<QuizController>().startTimer();
                 }
                 return null;
